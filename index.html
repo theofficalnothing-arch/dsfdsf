@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>esm.sh Test</title>
+</head>
+<body>
+
+  <script type="module">
+    import * as myModule from "https://esm.sh";
+    console.log("Module loaded successfully:", myModule);
+    if (myModule.hello) myModule.hello();
+  </script>
+
+</body>
+</html>
