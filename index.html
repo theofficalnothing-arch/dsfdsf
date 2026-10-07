@@ -1,15 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>esm.sh Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APStudy | Math and Language Arts Tutoring</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            color: #bdc3c7;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #2980b9;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+        }
+        .card ul {
+            padding-left: 1.2rem;
+        }
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+        #status-banner {
+            background: #27ae60;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-  <script type="module">
-    import * as myModule from "https://esm.sh";
-    console.log("Module loaded successfully:", myModule);
-    if (myModule.hello) myModule.hello();
-  </script>
+    <div id="status-banner">✅ Connected to esm.sh Module!</div>
+
+    <header>
+        <h1>APStudy</h1>
+        <p>Master algebra, calculus, geometry, and trigonometry alongside essay writing, grammar, and literary analysis for AP exams.</p>
+    </header>
+
+    <main class="container">
+        <!-- Mathematics Section -->
+        <section class="card">
+            <h2>Mathematics</h2>
+            <p>We cover algebra, calculus, derivatives, integrals, quadratic equations, probability, and statistics including the Pythagorean theorem and trigonometry.</p>
+            <ul>
+                <li>Algebra & Quadratic Equations</li>
+                <li>Calculus (Derivatives & Integrals)</li>
+                <li>Geometry & Trigonometry</li>
+                <li>Probability & Statistics</li>
+            </ul>
+        </section>
+
+        <!-- Science Section -->
+        <section class="card">
+            <h2>Science</h2>
+            <p>Sessions cover biology, chemistry, and physics through hypothesis, experiment, photosynthesis, and thermodynamics.</p>
+            <ul>
+                <li>Biology & Photosynthesis</li>
+                <li>Chemistry Foundations</li>
+                <li>Physics & Thermodynamics</li>
+            </ul>
+        </section>
+
+        <!-- English and Writing Section -->
+        <section class="card">
+            <h2>English and Writing</h2>
+            <p>Tutors help with essay, thesis, grammar, syntax, rhetoric, symbolism, and irony across persuasive and narrative writing.</p>
+            <ul>
+                <li>Essay & Thesis Construction</li>
+                <li>Grammar, Syntax & Rhetoric</li>
+                <li>Literary Analysis & Symbolism</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- ESM Module Implementation -->
+    <script type="module">
+        // 1. Import your exact cloud link that we verified
+        import * as apStudyModule from "https://esm.sh";
+
+        // 2. Run logic immediately once imported
+        try {
+            console.log("APStudy attempting to read module...", apStudyModule);
+            
+            if (apStudyModule.hello) {
+                // Run your custom repository function
+                apStudyModule.hello();
+                
+                // Show the green success banner on the webpage
+                document.getElementById("status-banner").style.display = "block";
+            } else {
+                console.error("Module loaded but function 'hello' wasn't found.");
+            }
+        } catch (error) {
+            console.error("Failed to fetch or run your esm.sh link:", error);
+        }
+    </script>
 
 </body>
 </html>
